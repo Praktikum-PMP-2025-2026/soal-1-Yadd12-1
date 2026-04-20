@@ -48,26 +48,26 @@ int main()
                     bBawah = storage[j];
                     break;
                 }
-                else if(storage[j]==-1 && (j==0))
-                {
-                    bBawah = 0;
-                    break;
-                }
+                // else if(storage[j]==-1 && (j==0))
+                // {
+                //     bBawah = 0;
+                //     break;
+                // }
                 j-=1;
             }
 
             while(k!=N)
             {
-                if(storage[k]!=-1 && k<N-1)
+                if(storage[k]!=-1)
                 {
                     bAtas = storage[k];
                     break;
                 }
-                else if(storage[k]==-1 && (k==N-1))
-                {
-                    bAtas = 0;
-                    break;
-                }
+                // else if(storage[k]==-1 && (k==N-1))
+                // {
+                //     bAtas = 0;
+                //     break;
+                // }
                 k+=1;
 
             }
