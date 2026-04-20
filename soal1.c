@@ -32,6 +32,10 @@ int main()
         {
             storage[i] = storage[i-1];
         }
+        else if(storage[i]==-1 && N==0)
+        {
+            storage[i] = 0;
+        }
         else if(storage[i]==-1)
         {
             j = i-1;
