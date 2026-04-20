@@ -153,7 +153,7 @@ int main()
     //         }
     //     }
     // }
-    if(storage[0]>0)
+    if(storage[0]>=0)
     {
         maks = storage[0];
     }
@@ -162,14 +162,16 @@ int main()
         maks = 0;
     }
 
-    for(i=1;i<N;i++)
+    if(N>1)
     {
-        if(storage[i]>0)
+        for(i=1;i<N;i++)
         {
-            maks = maks + storage[i];
+            if(storage[i]>0)
+            {
+                maks = maks + storage[i];
+            }
         }
     }
-    
 
     printf("RECOVERED");
     for(i=0;i<N;i++)
