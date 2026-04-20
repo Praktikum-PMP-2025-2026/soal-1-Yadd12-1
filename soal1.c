@@ -24,17 +24,17 @@ int main()
 
     for(i=0;i<N;i++)
     {
-        if (storage[i]==-1 && i==0)
+        if(storage[i]==-1 && N==1)
+        {
+            storage[i] = 0;
+        }
+        else if (storage[i]==-1 && i==0)
         {
             storage[i] = storage[i+1];
         }
         else if(storage[i]==-1 && i==(N-1))
         {
             storage[i] = storage[i-1];
-        }
-        else if(storage[i]==-1 && N==1)
-        {
-            storage[i] = 0;
         }
         else if(storage[i]==-1)
         {
@@ -48,20 +48,29 @@ int main()
                     bBawah = storage[j];
                     break;
                 }
+                else if(storage[j]==-1 && (j==0))
+                {
+                    bBawah = 0;
+                    break;
+                }
                 j-=1;
             }
 
             while(k!=N)
             {
-                if(storage[k]!=-1)
+                if(storage[k]!=-1 && k<N-1)
                 {
                     bAtas = storage[k];
                     break;
                 }
+                else if(storage[k]==-1 && (k==N-1))
+                {
+                    bAtas = 0;
+                    break;
+                }
                 k+=1;
-            }
 
-            
+            }
 
             storage[i] = (bAtas+bBawah)/2;
         }
