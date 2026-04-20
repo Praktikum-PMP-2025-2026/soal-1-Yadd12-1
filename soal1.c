@@ -30,11 +30,30 @@ int main()
         }
         else if (storage[i]==-1 && i==0)
         {
-            storage[i] = storage[i+1];
+            k = i+1;
+            while(k!=N)
+            {
+                if(storage[k]!=-1)
+                {
+                    storage[i] = storage[k];
+                    break;
+                }
+                k+=1;
+            }
         }
         else if(storage[i]==-1 && i==(N-1))
         {
             storage[i] = storage[i-1];
+            j = i-1;
+            while(j!=-1)
+            {
+                if(storage[j]!=-1)
+                {
+                    storage[i] = storage[j];
+                    break;
+                }
+                j-=1;
+            }
         }
         else if(storage[i]==-1)
         {
